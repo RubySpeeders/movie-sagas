@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import Homepage from '../../Pages/Homepage/Homepage';
 import './App.css';
 
 class App extends Component {
@@ -7,8 +8,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Movies!</h1>
+        <header>
+          <h1>Movies!</h1>
+        </header>
         <Router>
+          <Route exact path="/" component={Homepage} />
           {/* ADD PAGES! */}
         </Router>
         <p>Empty Page</p>
