@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import DetailsItem from '../../components/DetailsItem/DetailsItem';
-
 class MovieDetails extends Component {
   componentDidMount() {
-    this.props.dispatch(
-      {
-        type: 'GET_MOVIE_DETAILS',
-        payload: this.props.match.params.id,
-      },
-      () => {
-        console.log(this.props.store.details.description);
-      }
-    );
+    // console.log(this.props.match.params.id);
+    this.props.dispatch({
+      type: 'GET_MOVIE_DETAILS',
+      payload: this.props.match.params.id,
+    });
   }
 
   handleBackClick = () => {
@@ -27,8 +21,15 @@ class MovieDetails extends Component {
   render() {
     return (
       <div>
-        <pre>{this.props.store.details.title}</pre>
         <p>Movie Details Page</p>
+        <div>
+          {JSON.stringify(this.props.store.details)}
+          {this.props.store.details.title} <br />
+          <img
+            src={this.props.store.details.poster}
+            alt={this.props.store.details.title}
+          />
+        </div>
         <div>
           <button onClick={this.handleBackClick}>Back to List</button>
           <button onClick={this.handleEditClick}>Edit</button>
