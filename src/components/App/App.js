@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Movies!</h1>
+          <h1>SMDB - Speeders Movie Database</h1>
         </header>
         <Router>
           <Route exact path="/" component={Homepage} />

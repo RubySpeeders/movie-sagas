@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import MovieDetailItem from '../../components/MovieDetailItem/MovieDetailItem';
+
 class MovieDetails extends Component {
   componentDidMount() {
     // console.log(this.props.match.params.id);
@@ -21,15 +23,16 @@ class MovieDetails extends Component {
   render() {
     return (
       <div>
-        <p>Movie Details Page</p>
         <div>
-          {JSON.stringify(this.props.store.details)}
-          {this.props.store.details.title} <br />
-          <img
-            src={this.props.store.details.poster}
-            alt={this.props.store.details.title}
-          />
+          {this.props.store.details.map((item, index) => {
+            return <MovieDetailItem key={index} item={item} />;
+          })}
         </div>
+        {/* <div>
+          {this.props.store.details.map((item, index) => {
+            return <GenreDetailItem key={index} item={item} />;
+          })}
+        </div> */}
         <div>
           <button onClick={this.handleBackClick}>Back to List</button>
           <button onClick={this.handleEditClick}>Edit</button>
