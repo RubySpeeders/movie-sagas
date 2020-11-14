@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Homepage from '../../Pages/Homepage/Homepage';
-import './App.css';
 import { connect } from 'react-redux';
+
+//import pages and styling
+import Homepage from '../../Pages/Homepage/Homepage';
+import MovieDetails from '../../Pages/MovieDetails/MovieDetails';
+import './App.css';
 
 class App extends Component {
   componentDidMount() {
@@ -20,7 +23,7 @@ class App extends Component {
         </header>
         <Router>
           <Route exact path="/" component={Homepage} />
-          {/* ADD PAGES! */}
+          <Route path="/details/:id" component={MovieDetails} />
         </Router>
       </div>
     );

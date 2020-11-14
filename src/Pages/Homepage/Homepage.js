@@ -13,6 +13,4 @@ class Homepage extends Component {
   }
 }
 
-const mapStoreToProps = (store) => ({ store });
-
-export default connect(mapStoreToProps)(Homepage);
+export default connect()(Homepage);
