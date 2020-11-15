@@ -7,7 +7,6 @@ import {
   Avatar,
   Card,
   CardHeader,
-  CardMedia,
   CardActionArea,
   CardContent,
 } from '@material-ui/core';
@@ -29,6 +28,10 @@ class MovieItem extends Component {
               />
             }
             title={this.props.movies.title}
+            titleTypographyProps={{
+              variant: 'h6',
+              component: 'h3',
+            }}
           />
           <CardContent>
             {/* <CardMedia
