@@ -20,7 +20,7 @@ class MovieItem extends Component {
 
   render() {
     return (
-      <div>
+      <div className="movieList">
         {this.props.movies.title} <br />
         <img
           src={this.props.movies.poster}
