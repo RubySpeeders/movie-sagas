@@ -3,7 +3,7 @@ import { all } from 'redux-saga/effects';
 //SAGAS
 import getMoviesSaga from './getMovies.saga';
 import getMovieDetails from './getMovieDetails.saga';
-import postMovieSaga from './addMovie.saga';
+import postMovieSaga from './postMovie.saga';
 
 // Create the rootSaga generator function
 function* rootSaga() {

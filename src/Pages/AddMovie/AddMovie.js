@@ -19,6 +19,7 @@ class AddMovie extends Component {
   addMovie = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'POST_MOVIE', payload: this.state });
+    this.props.history.push('/');
   };
 
   handleBackClick = () => {
