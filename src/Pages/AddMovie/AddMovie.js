@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+//Material-UI
+import { Button } from '@material-ui/core';
+
 class AddMovie extends Component {
   state = {
     title: '',
@@ -41,7 +44,7 @@ class AddMovie extends Component {
     return (
       <div>
         <h2>Add a movie!</h2>
-        <button onClick={this.handleBackClick}>Back to List</button>
+        <Button onClick={this.handleBackClick}>Back to List</Button>
         <form onSubmit={this.addMovie}>
           <input
             required
@@ -73,7 +76,7 @@ class AddMovie extends Component {
               {genre}
             </select>
           </div>
-          <button>Add Movie</button>
+          <Button>Add Movie</Button>
         </form>
       </div>
     );
