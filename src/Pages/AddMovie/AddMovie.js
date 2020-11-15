@@ -6,7 +6,7 @@ class AddMovie extends Component {
     title: '',
     poster: '',
     description: '',
-    genre: '',
+    genre_id: '',
   };
 
   componentDidMount() {
@@ -14,15 +14,10 @@ class AddMovie extends Component {
   }
 
   handleChange = (propertyName) => (event) => {
-    this.setState(
-      {
-        ...this.state,
-        [propertyName]: event.target.value,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      ...this.state,
+      [propertyName]: event.target.value,
+    });
   };
 
   addMovie = (event) => {
@@ -38,14 +33,13 @@ class AddMovie extends Component {
   render() {
     const genre = this.props.store.genres.map((item, index) => {
       return (
-        <option value={item.name} key={index}>
+        <option value={item.id} key={index}>
           {item.name}
         </option>
       );
     });
     return (
       <div>
-        <ul>{genre}</ul>
         <h2>Add a movie!</h2>
         <button onClick={this.handleBackClick}>Back to List</button>
         <form onSubmit={this.addMovie}>
@@ -70,7 +64,7 @@ class AddMovie extends Component {
           <div>
             <label htmlFor="genres">Choose a genre</label>
             <select
-              onChange={this.handleChange('genre')}
+              onChange={this.handleChange('genre_id')}
               id="genres"
               name="genres"
             >
