@@ -3,6 +3,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import {
+  Avatar,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardActionArea,
+  CardContent,
+} from '@material-ui/core';
+
 class MovieItem extends Component {
   handleDetails = (event) => {
     this.props.history.push(`/details/${this.props.movies.id}`);
@@ -10,14 +19,26 @@ class MovieItem extends Component {
 
   render() {
     return (
-      <div className="movieList">
-        {this.props.movies.title} <br />
-        <img
-          src={this.props.movies.poster}
-          alt={this.props.movies.title}
-          onClick={this.handleDetails}
-        />
-      </div>
+      <Card>
+        <CardActionArea onClick={this.handleDetails}>
+          <CardHeader
+            avatar={
+              <Avatar
+                alt={this.props.movies.title}
+                src={this.props.movies.poster}
+              />
+            }
+            title={this.props.movies.title}
+          />
+          <CardContent>
+            {/* <CardMedia
+              image={this.props.movies.poster}
+              title={this.props.movies.title}
+            /> */}
+            <img src={this.props.movies.poster} alt={this.props.movies.title} />
+          </CardContent>
+        </CardActionArea>
+      </Card>
     );
   }
 }

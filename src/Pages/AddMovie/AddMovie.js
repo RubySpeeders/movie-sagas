@@ -67,6 +67,7 @@ class AddMovie extends Component {
               onChange={this.handleChange('genre_id')}
               id="genres"
               name="genres"
+              required
             >
               <option> </option>
               {genre}
