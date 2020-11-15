@@ -4,6 +4,7 @@ import { all } from 'redux-saga/effects';
 import getMoviesSaga from './getMovies.saga';
 import getMovieDetails from './getMovieDetails.saga';
 import postMovieSaga from './postMovie.saga';
+import getGenresSaga from './getGenres.saga';
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -13,6 +14,7 @@ function* rootSaga() {
     getMoviesSaga(),
     getMovieDetails(),
     postMovieSaga(),
+    getGenresSaga(),
   ]);
 }
 
