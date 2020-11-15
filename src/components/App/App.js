@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Homepage from '../../Pages/Homepage/Homepage';
 import MovieDetails from '../../Pages/MovieDetails/MovieDetails';
 import './App.css';
+import AddMovie from '../../Pages/AddMovie/AddMovie';
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Homepage} />
           <Route path="/details/:id" component={MovieDetails} />
+          <Route path="/addmovie" component={AddMovie} />
         </Router>
       </div>
     );
