@@ -14,10 +14,15 @@ class AddMovie extends Component {
   }
 
   handleChange = (propertyName) => (event) => {
-    this.setState({
-      ...this.state,
-      [propertyName]: event.target.value,
-    });
+    this.setState(
+      {
+        ...this.state,
+        [propertyName]: event.target.value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   addMovie = (event) => {
@@ -64,7 +69,11 @@ class AddMovie extends Component {
           />
           <div>
             <label htmlFor="genres">Choose a genre</label>
-            <select id="genres" name="genres">
+            <select
+              onChange={this.handleChange('genre')}
+              id="genres"
+              name="genres"
+            >
               <option> </option>
               {genre}
             </select>
