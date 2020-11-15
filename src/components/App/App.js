@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
+        <header className="header">
           <h1>SMDB - Speeders Movie Database</h1>
         </header>
         <Router>

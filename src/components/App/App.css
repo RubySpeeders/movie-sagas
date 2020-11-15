@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(202, 237, 240);
 }
 
 .App-header {
@@ -26,7 +27,11 @@
   }
 }
 
-.movieList {
+.header {
+  color: rgb(41, 41, 102);
+}
+
+/* .movieList {
   display: inline-block;
   margin: 10px;
-}
+} */

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 //Material-UI
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 
 class AddMovie extends Component {
   state = {
@@ -44,7 +44,7 @@ class AddMovie extends Component {
     return (
       <div>
         <h2>Add a movie!</h2>
-        <Button onClick={this.handleBackClick}>Back to List</Button>
+
         <form onSubmit={this.addMovie}>
           <input
             required
@@ -76,7 +76,16 @@ class AddMovie extends Component {
               {genre}
             </select>
           </div>
-          <Button>Add Movie</Button>
+          <Grid container spacing={4} justify="center">
+            <Grid item>
+              <Button onClick={this.handleBackClick} variant="contained">
+                Back to List
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="contained">Add Movie</Button>
+            </Grid>
+          </Grid>
         </form>
       </div>
     );
