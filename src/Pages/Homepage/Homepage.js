@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import MovieList from '../../components/MovieList/MovieList';
 
 class Homepage extends Component {
@@ -18,4 +17,4 @@ class Homepage extends Component {
   }
 }
 
-export default connect()(Homepage);
+export default Homepage;
