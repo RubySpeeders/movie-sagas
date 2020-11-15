@@ -50,6 +50,14 @@ class AddMovie extends Component {
             placeholder="Movie Description"
             onChange={this.handleChange('description')}
           />
+          <label htmlFor="genres">Choose a genre</label>
+          <select id="genres" name="genres">
+            <option value="pizza">Pizza</option>
+            <option value="curry">Curry</option>
+            <option value="salad">Salad</option>
+            <option value="ramen">Ramen</option>
+            <option value="tacos">Tacos</option>
+          </select>
           <button>Add Movie</button>
         </form>
       </div>
