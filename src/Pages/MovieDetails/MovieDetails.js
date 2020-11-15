@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import MovieDetailItem from '../../components/MovieDetailItem/MovieDetailItem';
+import GenreItem from '../../components/GenreItem/GenreItem';
 
 class MovieDetails extends Component {
   componentDidMount() {
-    // console.log(this.props.match.params.id);
+    // dispatch calls to get the details of movie clicked
     this.props.dispatch({
       type: 'GET_MOVIE_DETAILS',
       payload: this.props.match.params.id,
@@ -31,6 +30,11 @@ class MovieDetails extends Component {
           />
           <div>
             <p>{this.props.store.details.description}</p>
+            <ul>
+              {/* {this.props.store.details.genres.map((item, index) => {
+                return <GenreItem key={index} genre={item} />;
+              })} */}
+            </ul>
           </div>
         </div>
         <div>
