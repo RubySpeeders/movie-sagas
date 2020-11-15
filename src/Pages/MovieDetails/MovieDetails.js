@@ -30,10 +30,11 @@ class MovieDetails extends Component {
           />
           <div>
             <p>{this.props.store.details.description}</p>
+            <h3>Genres:</h3>
             <ul>
-              {/* {this.props.store.details.genres.map((item, index) => {
+              {this.props.store.details.genres.map((item, index) => {
                 return <GenreItem key={index} genre={item} />;
-              })} */}
+              })}
             </ul>
           </div>
         </div>
