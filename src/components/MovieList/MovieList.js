@@ -5,7 +5,7 @@ import MovieItem from '../MovieItem/MovieItem';
 class MovieList extends Component {
   render() {
     return (
-      <div className="movieList">
+      <div>
         {this.props.store.movies.map((item, index) => (
           <MovieItem key={index} movies={item} />
         ))}

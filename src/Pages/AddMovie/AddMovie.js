@@ -31,8 +31,16 @@ class AddMovie extends Component {
   };
 
   render() {
+    const genre = this.props.store.genres.map((item, index) => {
+      return (
+        <option value={item.name} key={index}>
+          {item.name}
+        </option>
+      );
+    });
     return (
       <div>
+        <ul>{genre}</ul>
         <h2>Add a movie!</h2>
         <button onClick={this.handleBackClick}>Back to List</button>
         <form onSubmit={this.addMovie}>
@@ -57,11 +65,8 @@ class AddMovie extends Component {
           <div>
             <label htmlFor="genres">Choose a genre</label>
             <select id="genres" name="genres">
-              <option value="pizza">Pizza</option>
-              <option value="curry">Curry</option>
-              <option value="salad">Salad</option>
-              <option value="ramen">Ramen</option>
-              <option value="tacos">Tacos</option>
+              <option> </option>
+              {genre}
             </select>
           </div>
           <button>Add Movie</button>
@@ -71,4 +76,8 @@ class AddMovie extends Component {
   }
 }
 
-export default connect()(AddMovie);
+const mapStateToProps = (store) => ({
+  store,
+});
+
+export default connect(mapStateToProps)(AddMovie);
