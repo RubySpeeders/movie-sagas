@@ -3,7 +3,7 @@ import MovieList from '../../components/MovieList/MovieList';
 
 class Homepage extends Component {
   handleAddClick = () => {
-    this.props.history.push('/addmovie');
+    this.props.history.push('/add/movie');
   };
 
   render() {
