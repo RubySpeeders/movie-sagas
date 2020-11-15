@@ -8,7 +8,7 @@
 
 // const details = {};
 
-function movieDetails(state = [], action) {
+function movieDetails(state = {}, action) {
   switch (action.type) {
     case 'SET_MOVIE_DETAILS':
       return action.payload;

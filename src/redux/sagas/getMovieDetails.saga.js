@@ -6,9 +6,12 @@ function* getMovieDetails(action) {
     const detailsResponse = yield axios.get(
       `/api/movie/details/${action.payload}`
     );
+    const genresResponse = yield axios.get(
+      `/api/genre/details/${action.payload}`
+    );
     yield put({
       type: 'SET_MOVIE_DETAILS',
-      payload: detailsResponse.data,
+      payload: { ...detailsResponse.data[0], genres: genresResponse.data },
     });
   } catch (err) {
     console.log('details error', err);
