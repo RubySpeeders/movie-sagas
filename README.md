@@ -10,6 +10,10 @@ Your project description goes here. What problem did you solve? How did you solv
 
 I built a movie database which shows movies in the database on a homepage. By clicking on a poster, the user is brought to a details page where the description and genres of that particular movie is shown. The user can also add a movie to the database.
 
+## Screenshot
+
+![Screen Shot 2020-11-15 at 6 46 40 PM](https://user-images.githubusercontent.com/69406113/99201925-f845a180-2772-11eb-9510-175a5b0f10fa.png)
+
 ## Prerequisites
 
 Node.js

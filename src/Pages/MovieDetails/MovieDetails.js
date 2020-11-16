@@ -40,13 +40,13 @@ class MovieDetails extends Component {
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          <Grid item xs={6}>
+          <Grid item xs={7}>
             <img
               src={this.props.store.details.poster}
               alt={this.props.store.details.title}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             <h2>{this.props.store.details.title}</h2>
             <div>
               <p>{this.props.store.details.description}</p>
