@@ -12,7 +12,6 @@ class Homepage extends Component {
   render() {
     return (
       <div>
-        <h2>Movies</h2>
         <Box m={2}>
           <Button onClick={this.handleAddClick} variant="contained">
             Add Movie

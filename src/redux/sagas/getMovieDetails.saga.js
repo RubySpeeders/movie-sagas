@@ -3,9 +3,11 @@ import axios from 'axios';
 
 function* getMovieDetails(action) {
   try {
+    //axios call to get movie details for specific id
     const detailsResponse = yield axios.get(
       `/api/movie/details/${action.payload}`
     );
+    //axios call to get the genre details for specific id
     const genresResponse = yield axios.get(
       `/api/genre/details/${action.payload}`
     );

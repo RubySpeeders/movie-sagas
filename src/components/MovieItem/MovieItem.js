@@ -13,6 +13,7 @@ import {
 
 class MovieItem extends Component {
   handleDetails = (event) => {
+    //route to detail page for movie clicked
     this.props.history.push(`/details/${this.props.movies.id}`);
   };
 
@@ -34,10 +35,6 @@ class MovieItem extends Component {
             }}
           />
           <CardContent>
-            {/* <CardMedia
-              image={this.props.movies.poster}
-              title={this.props.movies.title}
-            /> */}
             <img src={this.props.movies.poster} alt={this.props.movies.title} />
           </CardContent>
         </CardActionArea>

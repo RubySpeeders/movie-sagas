@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function* getGenres(action) {
   try {
+    //axios call to get genre
     const response = yield axios.get('/api/genre');
     console.log(response.data);
     yield put({

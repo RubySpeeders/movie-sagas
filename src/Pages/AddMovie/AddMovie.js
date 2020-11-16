@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 //Material-UI
-import { Button, Grid } from '@material-ui/core';
+import {
+  Button,
+  Grid,
+  TextField,
+  Select,
+  FormControl,
+  InputLabel,
+  MenuItem,
+} from '@material-ui/core';
 
 class AddMovie extends Component {
   state = {
@@ -13,10 +21,12 @@ class AddMovie extends Component {
   };
 
   componentDidMount() {
+    //dispatch to get genres for the dropdown
     this.props.dispatch({ type: 'GET_GENRES' });
   }
 
   handleChange = (propertyName) => (event) => {
+    //set local state to capture inputs
     this.setState({
       ...this.state,
       [propertyName]: event.target.value,
@@ -25,7 +35,9 @@ class AddMovie extends Component {
 
   addMovie = (event) => {
     event.preventDefault();
+    //dispatch to add movie to database via saga
     this.props.dispatch({ type: 'POST_MOVIE', payload: this.state });
+    //return to homepage
     this.props.history.push('/');
   };
 
@@ -36,9 +48,9 @@ class AddMovie extends Component {
   render() {
     const genre = this.props.store.genres.map((item, index) => {
       return (
-        <option value={item.id} key={index}>
+        <MenuItem value={item.id} key={index}>
           {item.name}
-        </option>
+        </MenuItem>
       );
     });
     return (
@@ -46,35 +58,41 @@ class AddMovie extends Component {
         <h2>Add a movie!</h2>
 
         <form onSubmit={this.addMovie}>
-          <input
+          <TextField
             required
-            type="text"
-            placeholder="Movie Title"
+            variant="outlined"
+            label="Movie Title"
             onChange={this.handleChange('title')}
           />
-          <input
+          <TextField
             required
-            type="text"
-            placeholder="Movie Poster url"
+            variant="outlined"
+            label="Movie Poster url"
             onChange={this.handleChange('poster')}
           />
-          <input
-            required
-            type="text"
-            placeholder="Movie Description"
-            onChange={this.handleChange('description')}
-          />
           <div>
-            <label htmlFor="genres">Choose a genre</label>
-            <select
-              onChange={this.handleChange('genre_id')}
-              id="genres"
-              name="genres"
+            <TextField
               required
-            >
-              <option> </option>
-              {genre}
-            </select>
+              variant="outlined"
+              label="Movie Description"
+              multiline
+              rows={5}
+              onChange={this.handleChange('description')}
+            />
+          </div>
+          <div>
+            <FormControl>
+              <InputLabel id="type-genre">Genre</InputLabel>
+              <Select
+                labelId="type-genre"
+                onChange={this.handleChange('genre_id')}
+                name="genres"
+                required
+              >
+                <MenuItem value="">Select Genre</MenuItem>
+                {genre}
+              </Select>
+            </FormControl>
           </div>
           <Grid container spacing={4} justify="center">
             <Grid item>
@@ -83,7 +101,9 @@ class AddMovie extends Component {
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained">Add Movie</Button>
+              <Button type="submit" variant="contained">
+                Add Movie
+              </Button>
             </Grid>
           </Grid>
         </form>

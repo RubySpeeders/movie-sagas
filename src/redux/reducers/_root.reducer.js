@@ -5,6 +5,7 @@ import genres from './genres.reducers';
 import details from './movies.details.reducers';
 
 const reducers = combineReducers({
+  //all reducers
   movies,
   genres,
   details,

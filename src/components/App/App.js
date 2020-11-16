@@ -23,6 +23,7 @@ class App extends Component {
           <h1>SMDB - Speeders Movie Database</h1>
         </header>
         <Router>
+          {/* Routes to pages */}
           <Route exact path="/" component={Homepage} />
           <Route path="/details/:id" component={MovieDetails} />
           <Route path="/add/movie" component={AddMovie} />

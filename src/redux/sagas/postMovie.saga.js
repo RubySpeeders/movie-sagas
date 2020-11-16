@@ -3,7 +3,9 @@ import axios from 'axios';
 
 function* postMovie(action) {
   try {
+    //axios call to add movie
     yield axios.post(`/api/movie`, action.payload);
+    //axios call to get movies to reset all movies (with new added movie)
     yield put({
       type: 'GET_MOVIES',
     });

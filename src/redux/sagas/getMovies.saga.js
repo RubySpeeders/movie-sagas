@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function* getMovies(action) {
   try {
+    //axios call to get all movies
     const response = yield axios.get('/api/movie');
     console.log(response.data);
     yield put({
